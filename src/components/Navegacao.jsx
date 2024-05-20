@@ -2,7 +2,13 @@
 
 const Navegacao = () => {
   return (
-    <div>Navegacao</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Frontend</a></li>
+        <li><a href="#">Programação</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Catálogo</a></li>
+    </ul>
   )
 }
 

@@ -1,8 +1,13 @@
+import Logo from "./Logo"
+import Navegacao from "./Navegacao"
 
 
 const Topo = () => {
   return (
-    <div>Topo</div>
+    <header className="topo">
+        <Logo />
+        <Navegacao />  
+    </header>
   )
 }
 
