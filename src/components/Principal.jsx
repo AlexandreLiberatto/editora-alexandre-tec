@@ -1,8 +1,10 @@
-
+import Home from "./Home"
 
 const Principal = () => {
   return (
-    <div>Principal</div>
+    <main className="principal">
+      <Home />
+    </main>
   )
 }
 
