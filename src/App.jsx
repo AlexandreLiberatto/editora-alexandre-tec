@@ -30,3 +30,8 @@ class App extends Component {
 }
 
 export default App;
+
+
+/* Substituí Switch por Routes.
+Substituí render por element ao definir as rotas.
+A rota de NotFound agora usa "*" para capturar todas as rotas não definidas */
