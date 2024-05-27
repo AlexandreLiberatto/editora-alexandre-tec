@@ -1,5 +1,3 @@
-
-
 const Home = () => (
   <main className="principal">
     <h2>Últimos lançamentos</h2>
