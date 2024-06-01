@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Topo from "./components/Topo";
 import Home from "./components/Home";
@@ -8,9 +8,9 @@ import Design from "./components/Design";
 import Catalogo from "./components/Catalogo";
 import NotFound from "./components/NotFound";
 import Rodape from "./components/Rodape";
-import "./index.css";
 import Livro from "./components/Livro";
 import axios from "axios";
+import "./index.css";
 
 class App extends Component {
   state = {
@@ -37,33 +37,12 @@ class App extends Component {
       <Router>
         <Topo />
         <Routes>
-          <Route path="/" render={() => <Home livros={this.state.livros} />} />
-          <Route
-            path="/frontend"
-            render={() => <Frontend livros={this.state.livros} />}
-          />
-          <Route
-            path="/programacao"
-            render={() => <Programacao livros={this.state.livros} />}
-          />
-          <Route
-            path="/design"
-            render={() => <Design livros={this.state.livros} />}
-          />
-          <Route
-            path="/catalogo"
-            render={() => <Catalogo livros={this.state.livros} />}
-          />
-          <Route
-            path="/livro/:livroSlug"
-            render={(props) => {
-              const livro = this.state.livros.find(
-                (livro) => Slug === props.match.params.livroSlug
-              );
-              if (livro) return <Livro livro={livro} />;
-              else return <NotFound />;
-            }}
-          />
+          <Route path="/" element={<Home livros={this.state.livros} />} />
+          <Route path="/frontend" element={<Frontend livros={this.state.livros} />} />
+          <Route path="/programacao" element={<Programacao livros={this.state.livros} />} />
+          <Route path="/design" element={<Design livros={this.state.livros} />} />
+          <Route path="/catalogo" element={<Catalogo livros={this.state.livros} />} />
+          <Route path="/livro/:livroSlug" element={<LivroPage livros={this.state.livros} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Rodape />
@@ -71,6 +50,13 @@ class App extends Component {
     );
   }
 }
+
+const LivroPage = ({ livros }) => {
+  const { livroSlug } = useParams();
+  const livro = livros.find(livro => livro.slug === livroSlug);
+  if (livro) return <Livro livro={livro} />;
+  else return <NotFound />;
+};
 
 export default App;
 
