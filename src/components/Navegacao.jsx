@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-let linkCorrente = {
+const linkCorrente = {
   color: "#027399",
 };
 
@@ -8,30 +8,29 @@ const Navegacao = () => {
   return (
     <ul>
       <li>
-        <NavLink exact activeStyle={linkCorrente} to="/" />
-        Home
-        <NavLink />
-      </li>
-
-      <li>
-        <NavLink exact activeStyle={linkCorrente} to="/frontend" />
-        Frontend
-        <NavLink />
+        <NavLink to="/" exact="true" style={({ isActive }) => isActive ? linkCorrente : undefined}>
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink exact activeStyle={linkCorrente} to="/programacao" />
-        Programação
-        <NavLink />
+        <NavLink to="/frontend" style={({ isActive }) => isActive ? linkCorrente : undefined}>
+          Frontend
+        </NavLink>
       </li>
       <li>
-        <NavLink exact activeStyle={linkCorrente} to="/design" />
-        Design
-        <NavLink />
+        <NavLink to="/programacao" style={({ isActive }) => isActive ? linkCorrente : undefined}>
+          Programação
+        </NavLink>
       </li>
       <li>
-        <NavLink exact activeStyle={linkCorrente} to="/catalogo" />
-        Catálogo
-        <NavLink />
+        <NavLink to="/design" style={({ isActive }) => isActive ? linkCorrente : undefined}>
+          Design
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/catalogo" style={({ isActive }) => isActive ? linkCorrente : undefined}>
+          Catálogo
+        </NavLink>
       </li>
     </ul>
   );

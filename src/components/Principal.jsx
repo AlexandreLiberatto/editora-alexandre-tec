@@ -1,11 +1,11 @@
-import Home from "./Home"
+import Home from "./Home";
 
 const Principal = () => {
   return (
     <main className="principal">
       <Home />
     </main>
-  )
-}
+  );
+};
 
-export default Principal
+export default Principal;

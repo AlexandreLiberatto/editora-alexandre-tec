@@ -1,5 +1,4 @@
 
-
 const Catalogo = () => (
   <main className="principal">
     <h2>Catálogo de livros</h2>

@@ -1,5 +1,3 @@
-
-
 const Design = () => (
   <main className="principal">
     <h2>Categoria design</h2>

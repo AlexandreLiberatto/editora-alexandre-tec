@@ -1,4 +1,4 @@
-import  { Component } from "react";
+import { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Topo from "./components/Topo";
 import Home from "./components/Home";
