@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Logo = () => (
   <Link to="/">
     <h1 className="logo">
-      <span>Editora MaujorTec</span>
+      <span>Editora Alexandre Tec</span>
     </h1>
   </Link>
 );
