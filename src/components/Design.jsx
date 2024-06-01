@@ -13,21 +13,12 @@ const Design = ({ livros }) => (
               alt="Thumbnail da capa do livro ..."
             />
           </div>
-          {livros
-            .filter((c) => c.slug === livro.slug)
-            .map((livro) => (
-              <span key={livro.slug}>
-                <Link to={`/livro/${livro.slug}`}>
-                  {
-                    <div className="detalhes">
-                      <h3>{livro.titulo}</h3>
-                      <p>{livro.descricao.slice(0, 130) + "..."}</p>
-                      <p>Leia mais &gt;</p>
-                    </div>
-                  }
-                </Link>
-              </span>
-            ))}
+          <div className="detalhes">
+            <h3>{livro.titulo}</h3>
+            <p>{livro.descricao.slice(0, 130) + "..."}</p>
+            <p>Leia mais &gt;</p>
+            <Link to={`/livro/${livro.slug}`}>Ver detalhes</Link>
+          </div>
         </div>
       ))}
   </main>

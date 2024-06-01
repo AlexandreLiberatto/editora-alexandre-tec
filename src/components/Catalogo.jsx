@@ -37,4 +37,5 @@ const Catalogo = ({ livros }) => {
     </main>
   );
 };
+
 export default Catalogo;

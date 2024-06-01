@@ -6,9 +6,9 @@ const Home = () => {
 
   useEffect(() => {
     fetch("/api/todosOsLivros.json")
-      .then(response => response.json())
-      .then(data => setLivros(data))
-      .catch(error => console.error("Erro ao carregar livros:", error));
+      .then((response) => response.json())
+      .then((data) => setLivros(data))
+      .catch((error) => console.error("Erro ao carregar livros:", error));
   }, []);
 
   return (
@@ -17,7 +17,7 @@ const Home = () => {
       {livros.length > 0 ? (
         livros
           .filter((n, index) => index < 6)
-          .map(livro => (
+          .map((livro) => (
             <div className="card" key={livro.id}>
               <div className="thumb">
                 <img

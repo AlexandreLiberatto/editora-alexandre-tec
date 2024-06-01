@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Livro = ({ livro }) => {
   return (
@@ -6,9 +6,9 @@ const Livro = ({ livro }) => {
       <div className="pag-livro">
         <h2>{livro.titulo}</h2>
         <div className="livro">
-          <img 
-            src={"/imagens/capas/" + livro.isbn.replace(/-/g, "") + ".jpg"} 
-            alt="Capa do livro..." 
+          <img
+            src={"/imagens/capas/" + livro.isbn.replace(/-/g, "") + ".jpg"}
+            alt="Capa do livro..."
           />
           <ul>
             <li>ISBN: {livro.isbn}</li>
@@ -22,7 +22,7 @@ const Livro = ({ livro }) => {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
 export default Livro;
