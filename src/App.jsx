@@ -14,7 +14,7 @@ import axios from "axios";
 
 class App extends Component {
   state = {
-    livros: []
+    livros: [],
   };
 
   async componentDidMount() {
@@ -24,11 +24,11 @@ class App extends Component {
     } catch (error) {
       console.log(error);
       document
-      .querySelectorAll(".principal")[0]
-      .insertAdjacentHTML(
-        "beforeend",
-        "<p class='erro'>Mensagem de erro</p>"
-      );
+        .querySelectorAll(".principal")[0]
+        .insertAdjacentHTML(
+          "beforeend",
+          "<p class='erro'>Mensagem de erro</p>"
+        );
     }
   }
 
@@ -37,11 +37,33 @@ class App extends Component {
       <Router>
         <Topo />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/frontend" element={<Frontend />} />
-          <Route path="/programacao" element={<Programacao />} />
-          <Route path="/design" element={<Design />} />
-          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/" render={() => <Home livros={this.state.livros} />} />
+          <Route
+            path="/frontend"
+            render={() => <Frontend livros={this.state.livros} />}
+          />
+          <Route
+            path="/programacao"
+            render={() => <Programacao livros={this.state.livros} />}
+          />
+          <Route
+            path="/design"
+            render={() => <Design livros={this.state.livros} />}
+          />
+          <Route
+            path="/catalogo"
+            render={() => <Catalogo livros={this.state.livros} />}
+          />
+          <Route
+            path="/livro/:livroSlug"
+            render={(props) => {
+              const livro = this.state.livros.find(
+                (livro) => Slug === props.match.params.livroSlug
+              );
+              if (livro) return <Livro livro={livro} />;
+              else return <NotFound />;
+            }}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Rodape />
@@ -51,7 +73,6 @@ class App extends Component {
 }
 
 export default App;
-
 
 /* Substituí Switch por Routes.
 Substituí render por element ao definir as rotas.
